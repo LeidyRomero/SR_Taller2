@@ -1,0 +1,25 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+pylint = "*"
+
+[packages]
+notebook = "*"
+jupyterlab = "*"
+numpy = "*"
+scikit-surprise = "*"
+pandas = "*"
+matplotlib = "*"
+sns = "*"
+django = "*"
+scikit-learn = "==0.19.1"
+mongoengine = "*"
+bson = "*"
+pymongo = "*"
+django-cors-headers = "*"
+
+[requires]
+python_version = "3.8"

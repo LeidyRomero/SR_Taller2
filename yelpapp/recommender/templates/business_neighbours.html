@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-8 pl-0">
+            <h1 class="mt-5">Sistemas de Recomendación - Taller 2</h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-8 pl-0">
+            <h2 class="mt-1">Vecinos de {{ business_name }}</h2>
+        </div>
+        <div class="col-sm-4">
+            <a href="{% url 'business_recommended_reviews' business_id %}" class="btn btn-primary pull-right" >Ver reviews recomendados</a>
+        </div>
+    </div>
+
+    <div class="row">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Categories</th>
+              <th scope="col">Address</th>
+              <th scope="col">City</th>
+              <th scope="col">State</th>
+              <th scope="col">Reviews</th>
+              <th scope="col">Stars</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for business in neighbours %}
+            <tr>
+                <td>{{business.name}}</td>
+                <td>{{business.categories}}</td>
+                <td>{{business.address}}</td>
+                <td>{{business.city}}</td>
+                <td>{{business.state}}</td>
+                <td>{{business.review_count}}</td>
+                <td>{{business.stars}}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock %}
